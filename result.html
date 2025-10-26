@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LuffyStudy — Result</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><div class="mark">LS</div><div><div class="site-title">LuffyStudy<span class="small muted">.com</span></div><div class="small muted">Admission & Result Updates</div></div></div>
+      <nav><a href="index.html">Home</a><a href="admission.html">Admission</a><a href="result.html">Result</a><a href="routine.html">Routine</a><a href="guide.html">Guide</a><a href="notice.html">Notice</a><a href="contact.html">Contact</a></nav>
+    </header>
+
+    <main style="margin-top:18px">
+      <div class="card">
+        <h1>Results — Check Here</h1>
+        <p class="muted">বিভিন্ন বোর্ড ও বিশ্ববিদ্যালয়ের রেজাল্ট চেক লিংক এবং নির্দেশিকা।</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+          <div class="card"><h4>SSC Result 2025</h4><p class="muted small">Check via board website or SMS. <a href="#">Official Link</a></p></div>
+          <div class="card"><h4>HSC Result 2025</h4><p class="muted small">Marksheet & grade explanation. <a href="#">Guide</a></p></div>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h3>Quick Result Checker</h3>
+          <input id="rollInput2" class="form-input" placeholder="Roll / Reg No">
+          <select id="boardSelect2" class="form-input" style="margin-top:8px"><option value="">Select Board</option><option>Dhaka</option><option>Rajshahi</option></select>
+          <button class="btn" id="checkBtn2" style="margin-top:8px">Check</button>
+          <div id="resArea2" style="margin-top:10px;display:none;background:#f8fafc;padding:10px;border-radius:8px"><div id="resCnt2"></div></div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="muted">© <span class="js-year"></span> LuffyStudy.com — All rights reserved.</div>
+      <div class="footer-credits">Developed By Miraj Ahmad.</div>
+    </footer>
+  </div>
+  <script src="assets/script.js"></script>
+  <script>
+    // small demo for this page
+    document.getElementById('checkBtn2').addEventListener('click',()=>{
+      const roll = document.getElementById('rollInput2').value.trim();
+      const board = document.getElementById('boardSelect2').value;
+      if(!roll || !board) return alert('Roll এবং Board সিলেক্ট করুন');
+      const marks = Math.floor(Math.random()*101);
+      const grade = marks>=80? 'A+' : marks>=70? 'A' : marks>=60? 'A-' : marks>=50? 'B' : 'C';
+      document.getElementById('resCnt2').innerHTML = `<strong>Roll:</strong> ${roll}<br><strong>Board:</strong> ${board}<br><strong>Marks:</strong> ${marks}/100<br><strong>Grade:</strong> ${grade}`;
+      document.getElementById('resArea2').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
